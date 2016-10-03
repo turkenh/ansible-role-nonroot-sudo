@@ -1,0 +1,4 @@
+# default password is "parse", to change check:
+# http://docs.ansible.com/ansible/faq.html#how-do-i-generate-crypted-passwords-for-the-user-module
+nonroot_sudo_user_crypted_password: "$6$QGzqa716sGyQVJf$kj9JPSJFmo5n8lNlGGQHi7xYQMmc8hEJP5IdQ8.Pp3nsvC54I6QP6DVXo8A5ylF.uBhWNQtXTX8iapZCIMwhR/"
+nonroot_sudo_ssh_key_to_authorize: ~/.ssh/id_rsa.pub

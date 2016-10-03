@@ -1,0 +1,10 @@
+---
+- name: Fail if "nonroot_sudo_username" is not defined
+  fail: msg="ERROR - required variable 'nonroot_sudo_username' missing."
+  when: nonroot_sudo_username is not defined
+
+- name: Create nonroot sudo user
+  user: name={{nonroot_sudo_username}} state=present password={{nonroot_sudo_user_crypted_password}} groups="sudo"
+
+- name: Add ssh key to authorized key for nonroot sudo user
+  authorized_key: user={{nonroot_sudo_username}} key="{{ lookup('file', '{{nonroot_sudo_ssh_key_to_authorize}}') }}"
